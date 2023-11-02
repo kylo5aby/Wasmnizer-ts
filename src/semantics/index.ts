@@ -916,8 +916,8 @@ export function BuildModuleNode(parserContext: ParserContext): ModuleNode {
 
     context.finishBuild();
 
-    // module.dump(CreateDefaultDumpWriter());
-    // module.dumpCodeTrees(CreateDefaultDumpWriter());
+    module.dump(CreateDefaultDumpWriter());
+    module.dumpCodeTrees(CreateDefaultDumpWriter());
     context.recClassTypeGroup = [];
     return module;
 }

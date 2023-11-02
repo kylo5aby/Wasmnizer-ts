@@ -3,16 +3,15 @@
 # SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
 #
 
-FROM node:16.16.0
-
+FROM node:20.9.0
 ARG USERNAME=vscode
 ARG USER_UID=1000
 ARG USER_GID=$USER_UID
 
 # node may come with an older version of npm. Ensure we have a specific npm.
-RUN npm install -g npm@8.11.0
+RUN npm install -g npm@10.1.0
 
-
+RUN npm -v
 ################################################################################
 # Install prerequisites
 RUN apt update
@@ -23,6 +22,7 @@ RUN apt install -y \
     build-essential cmake g++-multilib libgcc-8-dev lib32gcc-8-dev
 
 ## lsb-release  allows us to find out which distro we run inside the dev container
+
 
 
 # Add binaryen
